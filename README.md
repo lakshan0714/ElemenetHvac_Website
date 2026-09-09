@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Element HVAC — Website
+
+Production Next.js site for Element HVAC, a veteran-owned HVAC company serving Central
+Pennsylvania. Built with Next.js (App Router), TypeScript, Tailwind CSS v4, and a
+lazy-loaded React Three Fiber hero enhancement.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # ESLint
+npm run format  # Prettier
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Before launch — fill in real business data
 
-## Learn More
+Nearly all copy on this site is real (the company description, phone number, and
+service region were provided). A few things still need real values before this goes
+live. Every placeholder is bracketed like `[THIS]` so they're easy to find — the
+build treats most of them as "not yet set" and hides the related UI (e.g. the Google
+rating badge won't show until a real rating is added).
 
-To learn more about Next.js, take a look at the following resources:
+| What                         | Where                                            | Notes                                                                                                                                                                       |
+| ---------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Facebook page URL            | `src/lib/site-config.ts` → `social.facebook`     | Footer icon only renders once this is filled in.                                                                                                                            |
+| PA HVAC license number       | `src/lib/site-config.ts` → `license`             | Shown in the footer and About page.                                                                                                                                         |
+| Google rating & review count | `src/lib/site-config.ts` → `google`              | Trust bar rating badge is hidden until both are set.                                                                                                                        |
+| Contact email (if any)       | `src/lib/site-config.ts` → `email`               | Currently blank — the contact form is the only digital contact channel.                                                                                                     |
+| Financing partner details    | `src/components/Financing.tsx`                   | Never publish specific rates/terms that haven't been finalized with the lender.                                                                                             |
+| Real customer reviews        | `src/lib/reviews.ts`                             | Currently **sample/dummy reviews** for layout purposes only — replace with real, permissioned reviews before launch.                                                        |
+| Service area towns           | `src/lib/locations.ts`                           | Ships with one placeholder entry so the location-page template works. Add one entry per town actually serviced — avoid low-quality doorway pages for towns you don't serve. |
+| Lead delivery (email/CRM)    | `src/app/api/contact/route.ts` → `deliverLead()` | Currently only validates and logs the lead server-side. Wire up real delivery (e.g. Resend, SendGrid, or a CRM webhook) before launch.                                      |
+| Site URL                     | `.env.local` → `NEXT_PUBLIC_SITE_URL`            | Used for canonical URLs, sitemap, and structured data. See `.env.example`.                                                                                                  |
+| Real photography             | Hero, service cards/pages, financing section     | Every photo is currently a `PlaceholderImage` block. See **[IMAGE_PROMPTS.md](./IMAGE_PROMPTS.md)** for ready-to-use generation prompts and exact file paths.               |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+  app/                  Routes (App Router) — home, services, service-areas, about, contact
+  components/           UI components, organized flat with a ui/ and three/ subfolder
+  lib/                  Content data (services, locations, reviews, FAQs), site config, schema helpers
+```
 
-## Deploy on Vercel
+- **Services**: `src/lib/services.ts` is the single source of truth for all 15 service
+  pages (`/services/[slug]`) — each entry drives its own SEO metadata, JSON-LD, and page copy.
+- **Service areas**: `src/lib/locations.ts` drives `/service-areas/[slug]` the same way.
+- **3D hero**: `src/components/three/` — the fan scene only mounts on desktop viewports
+  with WebGL support and respects `prefers-reduced-motion`; it's lazy-loaded via
+  `next/dynamic` with `ssr: false` so it never blocks the initial page render.
+- **Security headers & CSP**: `next.config.ts`.
+- **Contact form**: `src/components/ContactForm.tsx` (client) posts to
+  `src/app/api/contact/route.ts`, which validates with Zod, applies a basic in-memory
+  rate limit, and checks a honeypot field.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- No business statistics, testimonials, awards, or certifications were invented —
+  anything not explicitly provided is a bracketed placeholder or omitted from the UI
+  until supplied.
+- The in-memory rate limiter in `api/contact/route.ts` is per-server-instance and
+  resets on restart — fine as a first line of defense, but replace with a durable
+  store (e.g. Redis/Upstash) if deploying to a multi-instance/serverless platform at
+  scale.
