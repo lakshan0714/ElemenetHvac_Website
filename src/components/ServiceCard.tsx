@@ -1,15 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Service } from "@/lib/services";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { ChevronRight } from "@/components/ui/icons";
 
 export function ServiceCard({ service }: { service: Service }) {
   return (
     <Link href={`/services/${service.slug}`} className="group flex flex-col">
-      <div className="overflow-hidden rounded-lg">
-        <PlaceholderImage
+      <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+        <Image
+          src={service.image.src}
           alt={service.image.alt}
-          className="aspect-[4/3] transition-transform duration-300 group-hover:scale-[1.03]"
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-[1.05]"
         />
       </div>
       <div className="pt-4">

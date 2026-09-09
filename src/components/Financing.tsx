@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { Check } from "@/components/ui/icons";
 
 const points = [
@@ -40,11 +40,13 @@ export function Financing() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-lg">
-          <PlaceholderImage
-            alt="Homeowner reviewing HVAC financing options with a technician"
-            tone="dark"
-            className="aspect-[4/3]"
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+          <Image
+            src="/images/financing.jpg"
+            alt="Homeowner reviewing HVAC financing options with an advisor"
+            fill
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            className="object-cover"
           />
         </div>
       </div>

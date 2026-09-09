@@ -1,9 +1,18 @@
 # Image Generation Prompts
 
-Every image on the site is currently a placeholder block. Use these prompts with an
-image generator (e.g. OpenAI's image tools) to create matching photos, then save each
-file at the exact path listed and swap the corresponding `PlaceholderImage` for a real
-`next/image` `<Image>` (or ask me to do the swap once the files exist).
+Every photo currently on the site (`public/images/`) is a free-license stock photo
+from [Pexels](https://www.pexels.com/license/) — generic technicians and scenes, not
+your actual team or trucks. The Pexels License permits free commercial use and
+modification with no attribution required, so they're safe to use as-is, but they
+aren't unique to your brand. See **Current stock photos** below for exactly which
+photo is used where, and use the prompts in this file whenever you want to replace one
+with a custom, on-brand photo (real photography of your team, or AI-generated to match
+your brand).
+
+To replace an image: generate/obtain the new photo, save it over the existing file at
+the same path (or a new path + update the `src` in `src/lib/services.ts` /
+`src/components/Hero.tsx` / `src/components/Financing.tsx`), and you're done — no
+other code changes needed.
 
 All prompts share a consistent visual style — a technician in a clean dark navy
 uniform, warm natural lighting, shallow depth of field, editorial/commercial
@@ -57,9 +66,38 @@ Each row's short description is the scenario only — combine it with the shared
 line at the top of this doc (or just copy the full prompt straight from
 `src/lib/services.ts`) for the complete prompt.
 
-## After generating
+## Current stock photos (Pexels, free license, no attribution required)
 
-1. Save files at the exact paths above under `public/`.
-2. Let me know (or do it yourself) — each `PlaceholderImage` usage gets swapped for
-   `next/image`'s `<Image>` with the matching `src`/`alt`/`sizes`, which is a small,
-   mechanical change once the files exist.
+| File                                   | Pexels photo                                                                                                           |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `hero-technician.jpg`                  | [pexels.com/photo/32497161](https://www.pexels.com/photo/technician-inspecting-outdoor-hvac-unit-32497161/)            |
+| `financing.jpg`                        | [pexels.com/photo/8439647](https://www.pexels.com/photo/people-having-conversation-8439647/)                           |
+| `services/ac-repair.jpg`               | [pexels.com/photo/5463575](https://www.pexels.com/photo/man-checking-an-air-conditioner-5463575/)                      |
+| `services/ac-installation.jpg`         | [pexels.com/photo/5463581](https://www.pexels.com/photo/man-drilling-an-aircon-casing-5463581/)                        |
+| `services/ac-replacement.jpg`          | [pexels.com/photo/5463580](https://www.pexels.com/photo/man-repairing-an-aircon-5463580/)                              |
+| `services/heating-repair.jpg`          | [pexels.com/photo/7859953](https://www.pexels.com/photo/plumber-repairing-power-source-7859953/)                       |
+| `services/furnace-repair.jpg`          | [pexels.com/photo/34938439](https://www.pexels.com/photo/technician-repairing-heating-system-in-workshop-34938439/)    |
+| `services/furnace-installation.jpg`    | [pexels.com/photo/34938442](https://www.pexels.com/photo/technician-maintaining-heating-system-in-workshop-34938442/)  |
+| `services/heat-pump-services.jpg`      | [pexels.com/photo/38067323](https://www.pexels.com/photo/modern-heat-pump-outside-new-building-38067323/)              |
+| `services/hvac-installation.jpg`       | [pexels.com/photo/6471913](https://www.pexels.com/photo/man-repairing-cables-in-a-car-6471913/)                        |
+| `services/hvac-replacement.jpg`        | [pexels.com/photo/7347538](https://www.pexels.com/photo/man-in-gray-t-shirt-fixing-the-aircon-7347538/)                |
+| `services/hvac-maintenance.jpg`        | [pexels.com/photo/32588555](https://www.pexels.com/photo/technician-performing-air-conditioning-maintenance-32588555/) |
+| `services/emergency-hvac.jpg`          | [pexels.com/photo/6471911](https://www.pexels.com/photo/man-with-tools-at-work-6471911/)                               |
+| `services/indoor-air-quality.jpg`      | [pexels.com/photo/36861984](https://www.pexels.com/photo/modern-air-purifier-in-repair-workshop-36861984/)             |
+| `services/ductwork-services.jpg`       | [pexels.com/photo/8297856](https://www.pexels.com/photo/an-air-duct-of-a-building-8297856/)                            |
+| `services/thermostat-installation.jpg` | [pexels.com/photo/34558052](https://www.pexels.com/photo/man-adjusting-thermostat-in-modern-home-interior-34558052/)   |
+| `services/commercial-hvac.jpg`         | [pexels.com/photo/5463587](https://www.pexels.com/photo/repairman-repairing-a-air-conditioner-5463587/)                |
+
+A few (hero, AC repair, financing, HVAC installation, HVAC replacement, HVAC
+maintenance, emergency, ductwork, thermostat) show a real technician; a few (heat pump,
+furnace) show equipment/workshop scenes since a closer topical match with a person
+wasn't available for free. All read as generic/stock rather than depicting Element
+HVAC's actual team — replace with real photos of your team and trucks whenever you're
+ready for a more authentic, differentiated look.
+
+## After generating a replacement
+
+1. Save the new file at the same path under `public/` (or a new path + update the
+   `src` reference).
+2. That's it — no other code changes needed, since every image is a `next/image`
+   `<Image>` already wired to these paths.

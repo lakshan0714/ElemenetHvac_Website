@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getServiceBySlug, services } from "@/lib/services";
 import { siteConfig } from "@/lib/site-config";
@@ -6,7 +7,6 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/ui/PhoneLink";
 import { Button } from "@/components/ui/Button";
 import { ServiceCard } from "@/components/ServiceCard";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { ReviewSection } from "@/components/ReviewSection";
 import { FAQSection } from "@/components/FAQSection";
@@ -89,11 +89,14 @@ export default async function ServicePage({ params }: PageProps) {
               </Button>
             </div>
           </div>
-          <div className="overflow-hidden rounded-lg">
-            <PlaceholderImage
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+            <Image
+              src={service.image.src}
               alt={service.image.alt}
-              className="aspect-[4/3]"
-              tone="dark"
+              fill
+              priority
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
             />
           </div>
         </div>

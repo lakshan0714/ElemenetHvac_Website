@@ -202,25 +202,6 @@ export function Droplet(props: IconProps) {
   );
 }
 
-export function ImageIcon(props: IconProps) {
-  return (
-    <svg {...base(props)}>
-      <rect x="3.5" y="4.5" width="17" height="15" rx="2" />
-      <circle cx="9" cy="10" r="1.6" />
-      <path d="m5 17.5 5-5 3.5 3.5L18 11l1 1.5" />
-    </svg>
-  );
-}
-
-export function MapIcon(props: IconProps) {
-  return (
-    <svg {...base(props)}>
-      <path d="M9 4.5 4 6.5v13l5-2 6 2 5-2v-13l-5 2-6-2Z" />
-      <path d="M9 4.5v13M15 6.5v13" />
-    </svg>
-  );
-}
-
 export function Sparkles(props: IconProps) {
   return (
     <svg {...base(props)}>
