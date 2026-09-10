@@ -68,9 +68,9 @@ line at the top of this doc (or just copy the full prompt straight from
 
 ## Current stock photos (Pexels, free license, no attribution required)
 
-| File                                   | Pexels photo                                                                                                           |
+| File                                   | Source                                                                                                                 |
 | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `hero-technician.jpg`                  | [pexels.com/photo/32497161](https://www.pexels.com/photo/technician-inspecting-outdoor-hvac-unit-32497161/)            |
+| `hero-technician.jpg`                  | Custom AI-generated photo (replaced the Pexels stock photo) — matches the hero prompt above.                           |
 | `financing.jpg`                        | [pexels.com/photo/8439647](https://www.pexels.com/photo/people-having-conversation-8439647/)                           |
 | `services/ac-repair.jpg`               | [pexels.com/photo/5463575](https://www.pexels.com/photo/man-checking-an-air-conditioner-5463575/)                      |
 | `services/ac-installation.jpg`         | [pexels.com/photo/5463581](https://www.pexels.com/photo/man-drilling-an-aircon-casing-5463581/)                        |
