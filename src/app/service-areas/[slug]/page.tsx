@@ -7,11 +7,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/ui/PhoneLink";
 import { Button } from "@/components/ui/Button";
 import { ServiceCard } from "@/components/ServiceCard";
+import { GoogleMap } from "@/components/GoogleMap";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { ReviewSection } from "@/components/ReviewSection";
 import { FinalCTA } from "@/components/FinalCTA";
 import { JsonLd } from "@/components/JsonLd";
 import { buildBreadcrumbSchema } from "@/lib/schema";
+import { isPlaceholder } from "@/lib/placeholder";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -40,6 +42,7 @@ export default async function LocationPage({ params }: PageProps) {
   if (!location) notFound();
 
   const featured = getFeaturedServices();
+  const hasRealTownName = !isPlaceholder(location.name) && !isPlaceholder(location.state);
 
   return (
     <>
@@ -79,7 +82,16 @@ export default async function LocationPage({ params }: PageProps) {
 
       <section className="py-16 sm:py-20">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-950">
+          <h2 className="text-2xl font-bold text-brand-950">Where We Cover</h2>
+          <div className="mt-6">
+            <GoogleMap
+              query={hasRealTownName ? `${location.name}, ${location.state}` : undefined}
+              title={`Map of ${location.name}, ${location.state}`}
+              zoom={hasRealTownName ? 11 : undefined}
+            />
+          </div>
+
+          <h2 className="mt-16 text-2xl font-bold text-brand-950">
             Popular Services in {location.name}
           </h2>
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

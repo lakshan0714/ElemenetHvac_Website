@@ -2,7 +2,7 @@ import Link from "next/link";
 import { locations } from "@/lib/locations";
 import { siteConfig } from "@/lib/site-config";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PennsylvaniaMap } from "@/components/PennsylvaniaMap";
+import { GoogleMap } from "@/components/GoogleMap";
 import { MapPin } from "@/components/ui/icons";
 
 export function ServiceAreaGrid() {
@@ -16,7 +16,7 @@ export function ServiceAreaGrid() {
         />
 
         <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
-          <PennsylvaniaMap />
+          <GoogleMap />
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {locations.map((location) => (

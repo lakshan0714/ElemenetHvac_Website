@@ -56,6 +56,11 @@ export const siteConfig = {
 
   serviceAreas: ["Central Pennsylvania", "Surrounding Areas"],
 
+  // Used to center the embedded Google Map. Falls back to the general
+  // service region since there's no public street address (service-area
+  // business, no storefront) — update once/if a real address is added.
+  mapQuery: "Central Pennsylvania, PA",
+
   financingPartner: "[FINANCING PARTNER NAME]",
 
   nav: [
