@@ -39,6 +39,17 @@ Aspect ratio: 4:3
 > resolution, editorial quality, no visible text, logos, or brand names, 4:3 aspect
 > ratio.
 
+## Why Choose Us — `public/images/why-choose-us-home.jpg`
+
+Aspect ratio: 4:5 (portrait)
+
+> Professional real estate photography: an attractive two-story suburban home
+> exterior at dusk with warm golden-hour lighting, well-maintained lawn and
+> landscaping, driveway leading to the garage, cozy illuminated windows. Clean
+> modern craftsman-style architecture, inviting curb appeal, shot on DSLR,
+> shallow depth of field, high resolution, no visible text, logos, house
+> numbers, or people, portrait 4:5 aspect ratio.
+
 ## Service pages — `public/images/services/<slug>.jpg`
 
 Aspect ratio: 4:3. These prompts also live in `src/lib/services.ts` on each service's
