@@ -10,6 +10,7 @@ const acInstallation = getServiceBySlug("ac-installation");
 const heatingRepair = getServiceBySlug("heating-repair");
 const hvacMaintenance = getServiceBySlug("hvac-maintenance");
 const emergencyHvac = getServiceBySlug("emergency-hvac");
+const indoorAirQuality = getServiceBySlug("indoor-air-quality");
 
 export function ServiceGrid() {
   if (
@@ -17,7 +18,8 @@ export function ServiceGrid() {
     !acInstallation ||
     !heatingRepair ||
     !hvacMaintenance ||
-    !emergencyHvac
+    !emergencyHvac ||
+    !indoorAirQuality
   ) {
     return null;
   }
@@ -28,6 +30,7 @@ export function ServiceGrid() {
     heatingRepair,
     hvacMaintenance,
     emergencyHvac,
+    indoorAirQuality,
   ];
 
   return (

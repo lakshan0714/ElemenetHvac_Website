@@ -533,6 +533,7 @@ export const services: Service[] = [
           "A standard filter protects your equipment and captures larger particles. A whole-home air purifier is a dedicated system designed to more thoroughly treat the air circulating through your home.",
       },
     ],
+    featured: true,
   },
   {
     slug: "ductwork-services",
