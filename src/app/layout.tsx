@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Inter } from "next/font/google";
+import { Archivo, Caveat, Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 import { buildOrganizationSchema, buildWebsiteSchema, getSiteUrl } from "@/lib/schema";
@@ -19,6 +19,13 @@ const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
   weight: ["600", "700", "800"],
+  display: "swap",
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+  weight: ["600", "700"],
   display: "swap",
 });
 
@@ -58,7 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${archivo.variable} h-full antialiased`}
+      className={`${inter.variable} ${archivo.variable} ${caveat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <JsonLd data={buildOrganizationSchema()} />

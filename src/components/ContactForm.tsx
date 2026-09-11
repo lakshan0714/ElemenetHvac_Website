@@ -95,7 +95,7 @@ export function ContactForm() {
           Full Name
         </label>
         <input id="name" name="name" type="text" required className={inputClasses} />
-        {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name}</p>}
+        {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
       </div>
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -107,7 +107,7 @@ export function ContactForm() {
             Phone Number
           </label>
           <input id="phone" name="phone" type="tel" required className={inputClasses} />
-          {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone}</p>}
+          {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
         </div>
         <div>
           <label
@@ -117,7 +117,7 @@ export function ContactForm() {
             Email Address
           </label>
           <input id="email" name="email" type="email" required className={inputClasses} />
-          {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
+          {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
         </div>
       </div>
 
@@ -145,7 +145,7 @@ export function ContactForm() {
           ))}
           <option value="Other">Other / Not Sure</option>
         </select>
-        {errors.service && <p className="mt-1 text-xs text-red-600">{errors.service}</p>}
+        {errors.service && <p className="mt-1 text-sm text-red-600">{errors.service}</p>}
       </div>
 
       <div>
@@ -196,7 +196,7 @@ export function ContactForm() {
         {status === "submitting" ? "Sending..." : "Request Service"}
       </button>
 
-      <p className="text-xs text-ink-300">
+      <p className="text-sm text-ink-300">
         We respect your privacy. Your information is only used to respond to your request
         and is never sold or shared.
       </p>

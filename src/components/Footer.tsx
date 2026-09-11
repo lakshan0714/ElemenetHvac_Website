@@ -101,14 +101,14 @@ export function Footer() {
                 Proudly serving {siteConfig.serviceAreas[0]} and surrounding areas
               </span>
             </li>
-            <li className="pt-2 text-xs text-ink-300">{siteConfig.hours.emergency}</li>
-            <li className="text-xs text-ink-300">{siteConfig.license.label}</li>
+            <li className="pt-2 text-sm text-ink-300">{siteConfig.hours.emergency}</li>
+            <li className="text-sm text-ink-300">{siteConfig.license.label}</li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-xs text-ink-300 sm:flex-row">
+        <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-sm text-ink-300 sm:flex-row">
           <p>
             © {year} {siteConfig.name}. All rights reserved. Veteran-Owned & Operated.
           </p>

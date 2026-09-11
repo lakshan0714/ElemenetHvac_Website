@@ -45,7 +45,7 @@ export function Logo({ className = "", dark = false }: LogoProps) {
         >
           ELEMENT
         </span>
-        <span className={`text-[11px] font-semibold tracking-[0.28em] ${subColor}`}>
+        <span className={`text-[12.5px] font-semibold tracking-[0.24em] ${subColor}`}>
           HVAC
         </span>
       </span>

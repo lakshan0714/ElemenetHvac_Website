@@ -26,7 +26,7 @@ export function Hero() {
 
       <div className="container-page relative grid grid-cols-1 gap-12 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
         <div>
-          <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-accent-400">
+          <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-accent-400">
             24/7 Emergency HVAC Service · {siteConfig.serviceAreas[0]}
           </p>
 

@@ -71,6 +71,7 @@
 
   --font-sans: var(--font-inter);
   --font-heading: var(--font-archivo);
+  --font-script: var(--font-caveat);
 
   --radius-sm: 4px;
   --radius-md: 6px;

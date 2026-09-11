@@ -49,7 +49,7 @@ export default function AboutPage() {
 
       <section className="bg-brand-950 py-16 sm:py-20">
         <div className="container-page">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent-400">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent-400">
             About {siteConfig.name}
           </p>
           <h1 className="mt-4 max-w-2xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl">

@@ -16,7 +16,7 @@ export function ReviewCard({ review }: { review: Review }) {
       </div>
       <figcaption className="mt-6 border-t border-ink-100 pt-4">
         <p className="text-sm font-bold text-brand-950">{review.name}</p>
-        <p className="text-xs text-ink-500">
+        <p className="text-sm text-ink-500">
           {review.location} · {review.serviceType}
         </p>
       </figcaption>

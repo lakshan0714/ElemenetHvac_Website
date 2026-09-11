@@ -73,7 +73,7 @@ export default async function ServicePage({ params }: PageProps) {
       <section className="bg-brand-950 py-16 sm:py-20">
         <div className="container-page grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent-400">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent-400">
               {service.category} Services · {siteConfig.serviceAreas[0]}
             </p>
             <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
@@ -144,12 +144,12 @@ export default async function ServicePage({ params }: PageProps) {
             <ol className="mt-4 space-y-4">
               {service.process.map((step, i) => (
                 <li key={step.title} className="flex gap-3">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-950 text-xs font-bold text-accent-400">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-950 text-sm font-bold text-accent-400">
                     {i + 1}
                   </span>
                   <div>
                     <p className="text-sm font-semibold text-brand-950">{step.title}</p>
-                    <p className="mt-0.5 text-xs leading-relaxed text-ink-500">
+                    <p className="mt-0.5 text-sm leading-relaxed text-ink-500">
                       {step.description}
                     </p>
                   </div>

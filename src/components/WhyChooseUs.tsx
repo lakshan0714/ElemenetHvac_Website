@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { siteConfig } from "@/lib/site-config";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Shield, Award, Wrench, Clock } from "@/components/ui/icons";
+import { Shield, Award, Wrench, Clock, Home, Sparkles } from "@/components/ui/icons";
 
 const points = [
   {
@@ -29,30 +29,89 @@ const points = [
   },
 ];
 
-export function WhyChooseUs() {
-  return (
-    <section className="bg-ink-50 py-20 sm:py-28">
-      <div className="container-page">
-        <SectionHeading
-          eyebrow="Why Choose Us"
-          title="Your Home Is In Safe Hands"
-          description="Element HVAC was built on the values our team carried in service: integrity, discipline, and doing the job right."
-        />
+function FeatureCard({
+  point,
+  index,
+}: {
+  point: (typeof points)[number];
+  index: number;
+}) {
+  const isBrand = index % 2 === 0;
+  const tint = isBrand
+    ? "bg-brand-600/10 text-brand-700"
+    : "bg-accent-600/10 text-accent-700";
+  const bar = isBrand ? "bg-brand-600" : "bg-accent-600";
+  const Icon = point.icon;
 
-        <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
-          {points.map(({ icon: Icon, title, description }) => (
-            <div key={title} className="flex gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-brand-950 text-accent-400">
-                <Icon className="h-6 w-6" />
-              </span>
-              <div>
-                <h3 className="text-lg font-bold text-brand-950">{title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-500">
-                  {description}
-                </p>
-              </div>
+  return (
+    <div className="rounded-2xl border border-ink-100 bg-white p-6 shadow-soft">
+      <span className={`flex h-12 w-12 items-center justify-center rounded-xl ${tint}`}>
+        <Icon className="h-6 w-6" />
+      </span>
+      <h3 className="mt-4 text-base font-bold text-brand-950">{point.title}</h3>
+      <p className="mt-1.5 text-sm leading-relaxed text-ink-500">{point.description}</p>
+      <span className={`mt-4 block h-1 w-10 rounded-full ${bar}`} />
+    </div>
+  );
+}
+
+export function WhyChooseUs() {
+  const [left, right] = [points.slice(0, 2), points.slice(2)];
+
+  return (
+    <section className="overflow-hidden bg-white py-20 sm:py-28">
+      <div className="container-page">
+        <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-600/10 px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-brand-700">
+            <Home className="h-4 w-4" />
+            Why Choose Us
+          </span>
+          <h2 className="text-3xl font-extrabold tracking-tight text-brand-950 sm:text-4xl">
+            Your Home Is In <span className="text-accent-600">Safe Hands</span>
+          </h2>
+          <p className="text-base leading-relaxed text-ink-500">
+            Element HVAC was built on the values our team carried in service: integrity,
+            discipline, and doing the job right.
+          </p>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_1.05fr_1fr] lg:gap-6">
+          <div className="order-2 grid grid-cols-1 gap-6 sm:order-2 sm:grid-cols-2 lg:order-1 lg:grid-cols-1">
+            {left.map((point, i) => (
+              <FeatureCard key={point.title} point={point} index={i} />
+            ))}
+          </div>
+
+          <div className="relative order-1 mx-auto w-full max-w-md sm:order-1 lg:order-2">
+            <div
+              aria-hidden
+              className="absolute -inset-6 -z-10 rounded-[3rem] bg-brand-600/10"
+            />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-lifted">
+              <Image
+                src="/images/why-choose-us-home.jpg"
+                alt="A comfortable, well-maintained home exterior"
+                fill
+                sizes="(min-width: 1024px) 30vw, 90vw"
+                className="object-cover object-[center_38%]"
+              />
             </div>
-          ))}
+            <Sparkles
+              aria-hidden
+              className="absolute -right-3 -top-3 h-9 w-9 text-accent-500"
+            />
+            <p className="font-script absolute -bottom-6 left-2 rotate-[-3deg] text-3xl leading-none text-brand-800 sm:text-4xl">
+              Comfort you can
+              <br />
+              come home to
+            </p>
+          </div>
+
+          <div className="order-3 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:order-3 lg:grid-cols-1">
+            {right.map((point, i) => (
+              <FeatureCard key={point.title} point={point} index={i + 2} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
