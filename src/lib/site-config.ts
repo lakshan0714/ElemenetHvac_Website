@@ -59,7 +59,11 @@ export const siteConfig = {
   // Used to center the embedded Google Map. Falls back to the general
   // service region since there's no public street address (service-area
   // business, no storefront) — update once/if a real address is added.
+  // A lat/lng center (State College, PA — roughly the middle of the
+  // region) is used instead of a text search so the embed doesn't try to
+  // render a place-search info card for a name that isn't a single POI.
   mapQuery: "Central Pennsylvania, PA",
+  mapCenter: { lat: 40.7934, lng: -77.86 },
 
   financingPartner: "[FINANCING PARTNER NAME]",
 

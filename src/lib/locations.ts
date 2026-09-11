@@ -8,6 +8,8 @@ export interface ServiceLocation {
   name: string;
   state: string;
   blurb: string;
+  /** Approximate town center — used to center the map embed on this page. */
+  coords: { lat: number; lng: number };
 }
 
 export const locations: ServiceLocation[] = [
@@ -17,6 +19,7 @@ export const locations: ServiceLocation[] = [
     state: "PA",
     blurb:
       "Home to Penn State and a fast-growing mix of established neighborhoods and new construction — we service both older systems and modern high-efficiency installs across State College.",
+    coords: { lat: 40.7934, lng: -77.86 },
   },
   {
     slug: "altoona",
@@ -24,6 +27,7 @@ export const locations: ServiceLocation[] = [
     state: "PA",
     blurb:
       "From the Allegheny Front's older housing stock to newer developments, Altoona homeowners count on us for reliable heating and cooling year-round.",
+    coords: { lat: 40.5187, lng: -78.3947 },
   },
   {
     slug: "bellefonte",
@@ -31,6 +35,7 @@ export const locations: ServiceLocation[] = [
     state: "PA",
     blurb:
       "Bellefonte's historic homes often mean older ductwork and legacy systems — our technicians are experienced working with both vintage and modern HVAC setups.",
+    coords: { lat: 40.9145, lng: -77.7833 },
   },
   {
     slug: "lewistown",
@@ -38,6 +43,7 @@ export const locations: ServiceLocation[] = [
     state: "PA",
     blurb:
       "We provide prompt heating and cooling service throughout Lewistown and the surrounding Juniata Valley communities.",
+    coords: { lat: 40.5987, lng: -77.5714 },
   },
   {
     slug: "huntingdon",
@@ -45,6 +51,7 @@ export const locations: ServiceLocation[] = [
     state: "PA",
     blurb:
       "Serving Huntingdon homeowners and local businesses with dependable HVAC repair, installation, and maintenance.",
+    coords: { lat: 40.4979, lng: -78.0106 },
   },
   {
     slug: "tyrone",
@@ -52,6 +59,7 @@ export const locations: ServiceLocation[] = [
     state: "PA",
     blurb:
       "Fast, honest HVAC service for Tyrone residents — from emergency repairs to full system replacements.",
+    coords: { lat: 40.6759, lng: -78.238 },
   },
   {
     slug: "clearfield",
@@ -59,6 +67,7 @@ export const locations: ServiceLocation[] = [
     state: "PA",
     blurb:
       "Central Pennsylvania winters are no joke — we help Clearfield homeowners keep their heating systems running reliably all season.",
+    coords: { lat: 41.0273, lng: -78.4381 },
   },
   {
     slug: "lock-haven",
@@ -66,6 +75,7 @@ export const locations: ServiceLocation[] = [
     state: "PA",
     blurb:
       "Serving Lock Haven and the surrounding West Branch Susquehanna communities with year-round comfort solutions.",
+    coords: { lat: 41.1367, lng: -77.4469 },
   },
 ];
 

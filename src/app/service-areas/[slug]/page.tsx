@@ -13,7 +13,6 @@ import { ReviewSection } from "@/components/ReviewSection";
 import { FinalCTA } from "@/components/FinalCTA";
 import { JsonLd } from "@/components/JsonLd";
 import { buildBreadcrumbSchema } from "@/lib/schema";
-import { isPlaceholder } from "@/lib/placeholder";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -42,7 +41,6 @@ export default async function LocationPage({ params }: PageProps) {
   if (!location) notFound();
 
   const featured = getFeaturedServices();
-  const hasRealTownName = !isPlaceholder(location.name) && !isPlaceholder(location.state);
 
   return (
     <>
@@ -85,9 +83,9 @@ export default async function LocationPage({ params }: PageProps) {
           <h2 className="text-2xl font-bold text-brand-950">Where We Cover</h2>
           <div className="mt-6">
             <GoogleMap
-              query={hasRealTownName ? `${location.name}, ${location.state}` : undefined}
+              center={location.coords}
               title={`Map of ${location.name}, ${location.state}`}
-              zoom={hasRealTownName ? 11 : undefined}
+              zoom={11}
             />
           </div>
 

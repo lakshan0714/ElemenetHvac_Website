@@ -95,16 +95,20 @@ export function WhyChooseUs() {
                 sizes="(min-width: 1024px) 30vw, 90vw"
                 className="object-cover object-[center_38%]"
               />
+              <div
+                aria-hidden
+                className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/70 to-transparent"
+              />
+              <p className="font-script absolute bottom-4 left-5 right-5 rotate-[-2deg] text-2xl leading-tight text-white drop-shadow sm:text-3xl">
+                Comfort you can come home to
+              </p>
             </div>
-            <Sparkles
+            <span
               aria-hidden
-              className="absolute -right-3 -top-3 h-9 w-9 text-accent-500"
-            />
-            <p className="font-script absolute -bottom-6 left-2 rotate-[-3deg] text-3xl leading-none text-brand-800 sm:text-4xl">
-              Comfort you can
-              <br />
-              come home to
-            </p>
+              className="absolute -right-3 -top-3 flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-lifted"
+            >
+              <Sparkles className="h-5 w-5 text-accent-500" />
+            </span>
           </div>
 
           <div className="order-3 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:order-3 lg:grid-cols-1">

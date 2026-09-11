@@ -1,8 +1,8 @@
 import { siteConfig } from "@/lib/site-config";
 
 interface GoogleMapProps {
-  /** Place/address to center the map on. Defaults to the general service region. */
-  query?: string;
+  /** Center point. Defaults to the general service region. */
+  center?: { lat: number; lng: number };
   title?: string;
   /** Wider zoom for a whole-region view, tighter for a single town. */
   zoom?: number;
@@ -10,18 +10,20 @@ interface GoogleMapProps {
 }
 
 /**
- * Real Google Maps embed (no API key required). Defaults to the general
- * service region rather than a specific pin, since this is a service-area
- * business with no public storefront — pass `query` for a specific town or
- * update `siteConfig.mapQuery` if a real street address becomes public.
+ * Real Google Maps embed (no API key required), centered on coordinates
+ * rather than a text search — the search (`q=`) form of this embed renders
+ * an empty place-info panel over the map whenever the query doesn't resolve
+ * to a single distinct listing, which happens even for real town names.
+ * Centering on lat/lng avoids that entirely; the map's own tiles already
+ * label nearby towns.
  */
 export function GoogleMap({
-  query = siteConfig.mapQuery,
+  center = siteConfig.mapCenter,
   title = `Map of ${siteConfig.serviceAreas[0]} — ${siteConfig.name} service area`,
   zoom = 9,
   className = "h-[360px] w-full",
 }: GoogleMapProps) {
-  const src = `https://www.google.com/maps?q=${encodeURIComponent(query)}&z=${zoom}&output=embed`;
+  const src = `https://www.google.com/maps?ll=${center.lat},${center.lng}&z=${zoom}&output=embed`;
 
   return (
     <div className="overflow-hidden rounded-lg border border-ink-100 shadow-soft">
