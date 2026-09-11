@@ -19,10 +19,10 @@ export function EmergencyBanner() {
             <AlertTriangle className="h-6 w-6" />
           </span>
           <div>
-            <h2 className="text-2xl font-extrabold text-brand-950 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
               HVAC Stopped Working?
             </h2>
-            <p className="mt-1.5 max-w-md text-brand-950/80">
+            <p className="mt-1.5 max-w-md text-white/85">
               We provide fast, 24/7 emergency heating and cooling service throughout{" "}
               {siteConfig.serviceAreas[0]}.
             </p>

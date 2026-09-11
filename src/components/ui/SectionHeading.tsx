@@ -21,7 +21,7 @@ export function SectionHeading({
       {eyebrow && (
         <span
           className={`text-xs font-bold uppercase tracking-[0.18em] ${
-            dark ? "text-accent-400" : "text-accent-600"
+            dark ? "text-accent-400" : "text-accent-700"
           }`}
         >
           {eyebrow}

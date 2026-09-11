@@ -10,7 +10,7 @@ interface LogoProps {
  */
 export function Logo({ className = "", dark = false }: LogoProps) {
   const textColor = dark ? "text-white" : "text-brand-950";
-  const subColor = dark ? "text-accent-400" : "text-accent-600";
+  const subColor = dark ? "text-accent-400" : "text-accent-700";
 
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
@@ -26,7 +26,7 @@ export function Logo({ className = "", dark = false }: LogoProps) {
         <rect width="38" height="38" rx="8" className="fill-brand-900" />
         <path
           d="M9 22.5 19 13l10 9.5"
-          stroke="#de7c17"
+          stroke="#c63b2f"
           strokeWidth="2.6"
           strokeLinecap="round"
           strokeLinejoin="round"

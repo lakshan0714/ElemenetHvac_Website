@@ -44,7 +44,7 @@ export default function ContactPage() {
 
           <aside className="flex flex-col gap-6">
             <div className="rounded-lg bg-accent-50 p-6">
-              <h3 className="text-sm font-bold uppercase tracking-wide text-accent-600">
+              <h3 className="text-sm font-bold uppercase tracking-wide text-accent-700">
                 Emergency?
               </h3>
               <p className="mt-2 text-sm text-ink-700">

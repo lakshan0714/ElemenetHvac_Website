@@ -10,7 +10,7 @@ export function AnnouncementBar() {
         <PhoneLink
           variant="ghost"
           size="md"
-          className="!p-0 !text-accent-400 underline underline-offset-2 hover:!bg-transparent hover:!text-accent-500"
+          className="!p-0 !text-accent-400 underline underline-offset-2 hover:!bg-transparent hover:!text-white"
           label={siteConfig.phone}
           showIcon={false}
         />

@@ -1,24 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand — deep navy scale (authority, trust) */
-  --color-brand-950: #060f1f;
-  --color-brand-900: #0a1a33;
-  --color-brand-800: #0f2547;
-  --color-brand-700: #15335f;
-  --color-brand-600: #1d4478;
-  --color-brand-500: #2a5990;
+  /* Brand — Signal, a slate-navy scale (authority, trust) */
+  --color-brand-950: #09111d;
+  --color-brand-900: #0e1d2f;
+  --color-brand-800: #142842;
+  --color-brand-700: #1b3659;
+  --color-brand-600: #224673;
+  --color-brand-500: #2b578f;
 
-  /* Steel — secondary cool blue */
-  --color-steel-500: #3d7bad;
-  --color-steel-300: #8fb9da;
-  --color-steel-100: #dbe9f5;
+  /* Steel — secondary cool blue, same hue as brand */
+  --color-steel-500: #3d6fad;
+  --color-steel-300: #8fb0da;
+  --color-steel-100: #dbe7f5;
 
-  /* Accent — warm amber (CTAs, urgency, heat) */
-  --color-accent-600: #c2660a;
-  --color-accent-500: #de7c17;
-  --color-accent-400: #ea9a3f;
-  --color-accent-50: #fdf3e7;
+  /* Accent — Brick, a true red (CTAs, urgency, heat). Complementary to
+     Signal (~213° vs ~5.5° — a ~208° gap), reads more "get it fixed
+     tonight" than the amber it replaced.
+     Brick is dark-luminance at every step (red under-weights in relative
+     luminance vs. amber's yellow-green), so text ON accent fills is WHITE
+     here, not brand-950 — the inverse of the old amber pairing. Text-on-
+     LIGHT-background accent still needs 700, which hits 8.2:1 on white. */
+  --color-accent-700: #902b22;
+  --color-accent-600: #a53127;
+  --color-accent-500: #c63b2f;
+  --color-accent-400: #d65d52;
+  --color-accent-50: #faebea;
 
   /* Neutrals */
   --color-ink-950: #0b0e14;
@@ -48,6 +55,7 @@
   --color-steel-300: var(--color-steel-300);
   --color-steel-100: var(--color-steel-100);
 
+  --color-accent-700: var(--color-accent-700);
   --color-accent-600: var(--color-accent-600);
   --color-accent-500: var(--color-accent-500);
   --color-accent-400: var(--color-accent-400);

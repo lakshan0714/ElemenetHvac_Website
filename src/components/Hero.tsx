@@ -12,7 +12,7 @@ export function Hero() {
     <section className="relative overflow-hidden bg-brand-950">
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(circle_at_20%_-10%,rgba(61,123,173,0.35),transparent_55%),radial-gradient(circle_at_85%_15%,rgba(222,124,23,0.18),transparent_45%)]"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_20%_-10%,rgba(61,111,173,0.35),transparent_55%),radial-gradient(circle_at_85%_15%,rgba(198,59,47,0.18),transparent_45%)]"
       />
       <div
         aria-hidden
