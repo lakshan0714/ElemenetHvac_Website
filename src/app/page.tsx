@@ -1,5 +1,4 @@
 import { Hero } from "@/components/Hero";
-import { TrustBar } from "@/components/TrustBar";
 import { ServiceGrid } from "@/components/ServiceGrid";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
@@ -19,7 +18,6 @@ export default function Home() {
     <>
       <JsonLd data={buildFaqSchema(homepageFaqs)} />
       <Hero />
-      <TrustBar />
       <ServiceGrid />
       <WhyChooseUs />
       <EmergencyBanner />

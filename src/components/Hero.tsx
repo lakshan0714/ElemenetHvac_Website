@@ -3,7 +3,6 @@ import { siteConfig } from "@/lib/site-config";
 import { Button } from "@/components/ui/Button";
 import { PhoneLink } from "@/components/ui/PhoneLink";
 import { CheckCircle } from "@/components/ui/icons";
-import { Hero3DLazy } from "@/components/three/Hero3DLazy";
 
 const trustLine = ["Licensed & Insured", "Veteran-Owned & Operated", "Same-Day Service"];
 
@@ -70,9 +69,6 @@ export function Hero() {
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="object-cover"
             />
-          </div>
-          <div className="absolute -bottom-6 -left-6 h-28 w-28 overflow-hidden rounded-full border-4 border-brand-950 bg-brand-900 shadow-lifted">
-            <Hero3DLazy />
           </div>
         </div>
       </div>
