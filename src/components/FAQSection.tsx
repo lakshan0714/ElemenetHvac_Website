@@ -26,7 +26,7 @@ export function FAQSection({
                 {faq.question}
                 <ChevronDown className="h-5 w-5 shrink-0 text-ink-500 transition-transform duration-200 group-open:rotate-180" />
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-ink-500">{faq.answer}</p>
+              <p className="mt-3 text-base leading-relaxed text-ink-500">{faq.answer}</p>
             </details>
           ))}
         </div>

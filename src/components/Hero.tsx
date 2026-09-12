@@ -25,7 +25,7 @@ export function Hero() {
 
       <div className="container-page relative grid grid-cols-1 gap-12 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
         <div>
-          <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-accent-400">
+          <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-base font-semibold uppercase tracking-wide text-accent-400">
             24/7 Emergency HVAC Service · {siteConfig.serviceAreas[0]}
           </p>
 
@@ -50,7 +50,7 @@ export function Hero() {
             {trustLine.map((item) => (
               <li
                 key={item}
-                className="flex items-center gap-2 text-sm font-medium text-ink-100/90"
+                className="flex items-center gap-2 text-base font-medium text-ink-100/90"
               >
                 <CheckCircle className="h-4 w-4 text-accent-400" />
                 {item}

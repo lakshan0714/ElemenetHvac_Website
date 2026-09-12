@@ -49,7 +49,7 @@ export default function AboutPage() {
 
       <section className="bg-brand-950 py-16 sm:py-20">
         <div className="container-page">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent-400">
+          <p className="text-base font-bold uppercase tracking-[0.18em] text-accent-400">
             About {siteConfig.name}
           </p>
           <h1 className="mt-4 max-w-2xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
@@ -69,7 +69,7 @@ export default function AboutPage() {
                 <Icon className="h-5 w-5" />
               </span>
               <h2 className="text-lg font-bold text-brand-950">{title}</h2>
-              <p className="text-sm leading-relaxed text-ink-500">{description}</p>
+              <p className="text-base leading-relaxed text-ink-500">{description}</p>
             </div>
           ))}
         </div>
@@ -100,7 +100,7 @@ export default function AboutPage() {
           </div>
           <div className="rounded-lg border border-ink-100 bg-white p-8 shadow-soft">
             <h3 className="text-lg font-bold text-brand-950">Credentials</h3>
-            <ul className="mt-5 space-y-3 text-sm text-ink-700">
+            <ul className="mt-5 space-y-3 text-base text-ink-700">
               <li className="flex items-center gap-2.5">
                 <CheckCircle className="h-4 w-4 shrink-0 text-accent-600" />
                 Veteran-Owned & Operated

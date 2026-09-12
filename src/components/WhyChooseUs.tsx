@@ -49,7 +49,7 @@ function FeatureCard({
         <Icon className="h-6 w-6" />
       </span>
       <h3 className="mt-4 text-base font-bold text-brand-950">{point.title}</h3>
-      <p className="mt-1.5 text-sm leading-relaxed text-ink-500">{point.description}</p>
+      <p className="mt-1.5 text-base leading-relaxed text-ink-500">{point.description}</p>
       <span className={`mt-4 block h-1 w-10 rounded-full ${bar}`} />
     </div>
   );
@@ -62,7 +62,7 @@ export function WhyChooseUs() {
     <section className="overflow-hidden bg-white py-20 sm:py-28">
       <div className="container-page">
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-600/10 px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-brand-700">
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-600/10 px-4 py-1.5 text-base font-bold uppercase tracking-wide text-brand-700">
             <Home className="h-4 w-4" />
             Why Choose Us
           </span>

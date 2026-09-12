@@ -20,7 +20,7 @@ export function SectionHeading({
     <div className={`flex max-w-2xl flex-col gap-3 ${alignClasses}`}>
       {eyebrow && (
         <span
-          className={`text-sm font-bold uppercase tracking-[0.18em] ${
+          className={`text-base font-bold uppercase tracking-[0.18em] ${
             dark ? "text-accent-400" : "text-accent-700"
           }`}
         >

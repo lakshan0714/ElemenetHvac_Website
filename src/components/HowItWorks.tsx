@@ -42,7 +42,7 @@ export function HowItWorks() {
                 <Icon className="h-6 w-6" />
               </span>
               <h3 className="mt-5 text-base font-bold text-brand-950">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-500">{description}</p>
+              <p className="mt-2 text-base leading-relaxed text-ink-500">{description}</p>
             </div>
           ))}
         </div>

@@ -4,7 +4,7 @@ import { PhoneLink } from "@/components/ui/PhoneLink";
 export function AnnouncementBar() {
   return (
     <div className="bg-brand-950 text-white">
-      <div className="container-page flex flex-wrap items-center justify-center gap-x-3 gap-y-1 py-2 text-center text-sm font-medium sm:text-base">
+      <div className="container-page flex flex-wrap items-center justify-center gap-x-3 gap-y-1 py-2 text-center text-base font-medium sm:text-lg">
         <span className="hidden sm:inline text-accent-400">●</span>
         <span>24/7 Emergency HVAC Service — Serving {siteConfig.serviceAreas[0]}</span>
         <PhoneLink

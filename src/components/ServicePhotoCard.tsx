@@ -20,10 +20,10 @@ export function ServicePhotoCard({ service }: { service: Service }) {
       <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/20 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-6">
         <h3 className="text-xl font-bold text-white">{service.name}</h3>
-        <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-ink-100/80">
+        <p className="mt-1.5 line-clamp-2 text-base leading-relaxed text-ink-100/80">
           {service.summary}
         </p>
-        <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-accent-400 transition-all group-hover:gap-2">
+        <span className="mt-3 inline-flex items-center gap-1 text-base font-semibold text-accent-400 transition-all group-hover:gap-2">
           Learn More <ChevronRight className="h-4 w-4" />
         </span>
       </div>

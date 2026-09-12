@@ -21,7 +21,7 @@ export default function TermsPage() {
           <h1 className="text-3xl font-extrabold text-brand-950 sm:text-4xl">
             Terms of Service
           </h1>
-          <p className="mt-4 text-sm text-ink-500">
+          <p className="mt-4 text-base text-ink-500">
             [Add your finalized terms of service here before launch. This placeholder
             should be replaced with terms reviewed for {siteConfig.name} covering website
             use, service estimates, and liability.]

@@ -26,7 +26,7 @@ export function Financing() {
             {points.map((point) => (
               <li
                 key={point}
-                className="flex items-center gap-3 text-sm font-medium text-ink-100/90"
+                className="flex items-center gap-3 text-base font-medium text-ink-100/90"
               >
                 <Check className="h-4 w-4 shrink-0 text-accent-400" />
                 {point}

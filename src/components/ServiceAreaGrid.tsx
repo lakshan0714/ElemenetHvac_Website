@@ -23,7 +23,7 @@ export function ServiceAreaGrid() {
               <Link
                 key={location.slug}
                 href={`/service-areas/${location.slug}`}
-                className="flex items-center gap-3 rounded-md border border-ink-100 bg-white px-5 py-4 text-sm font-semibold text-brand-950 shadow-soft transition-colors hover:border-accent-500 hover:text-accent-700"
+                className="flex items-center gap-3 rounded-md border border-ink-100 bg-white px-5 py-4 text-base font-semibold text-brand-950 shadow-soft transition-colors hover:border-accent-500 hover:text-accent-700"
               >
                 <MapPin className="h-4 w-4 shrink-0 text-accent-600" />
                 {location.name}

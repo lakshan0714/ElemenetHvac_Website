@@ -23,7 +23,7 @@ export default function ContactPage() {
 
       <section className="bg-brand-950 py-16 sm:py-20">
         <div className="container-page">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent-400">
+          <p className="text-base font-bold uppercase tracking-[0.18em] text-accent-400">
             Get In Touch
           </p>
           <h1 className="mt-4 max-w-2xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
@@ -44,17 +44,17 @@ export default function ContactPage() {
 
           <aside className="flex flex-col gap-6">
             <div className="rounded-lg bg-accent-50 p-6">
-              <h3 className="text-sm font-bold uppercase tracking-wide text-accent-700">
+              <h3 className="text-base font-bold uppercase tracking-wide text-accent-700">
                 Emergency?
               </h3>
-              <p className="mt-2 text-sm text-ink-700">
+              <p className="mt-2 text-base text-ink-700">
                 For urgent heating or cooling issues, call us directly — available 24/7.
               </p>
               <PhoneLink className="mt-4 w-full" size="lg" />
             </div>
 
             <div className="rounded-lg border border-ink-100 bg-white p-6 shadow-soft">
-              <ul className="space-y-4 text-sm text-ink-700">
+              <ul className="space-y-4 text-base text-ink-700">
                 <li className="flex items-start gap-3">
                   <Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent-600" />
                   <a href={siteConfig.phoneHref} className="hover:text-brand-900">

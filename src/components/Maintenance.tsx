@@ -14,7 +14,7 @@ export function Maintenance() {
     <section className="py-20 sm:py-28">
       <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div className="order-2 rounded-lg bg-ink-50 p-8 lg:order-1">
-          <p className="text-sm font-semibold uppercase tracking-wide text-accent-700">
+          <p className="text-base font-semibold uppercase tracking-wide text-accent-700">
             Maintenance Plans
           </p>
           <p className="mt-3 text-2xl font-bold text-brand-950">
@@ -24,7 +24,7 @@ export function Maintenance() {
             {included.map((item) => (
               <li
                 key={item}
-                className="flex items-center gap-3 text-sm font-medium text-ink-700"
+                className="flex items-center gap-3 text-base font-medium text-ink-700"
               >
                 <Check className="h-4 w-4 shrink-0 text-accent-600" />
                 {item}

@@ -24,7 +24,7 @@ export default function ServicesPage() {
 
       <section className="bg-brand-950 py-16 sm:py-20">
         <div className="container-page text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent-400">
+          <p className="text-base font-bold uppercase tracking-[0.18em] text-accent-400">
             Our Services
           </p>
           <h1 className="mx-auto mt-4 max-w-2xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl">

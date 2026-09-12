@@ -12,7 +12,7 @@ export function Footer() {
       <div className="container-page grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         <div>
           <Logo dark />
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-300">
+          <p className="mt-4 max-w-xs text-base leading-relaxed text-ink-300">
             {siteConfig.description}
           </p>
           {siteConfig.social.facebook && (
@@ -29,10 +29,10 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
+          <h3 className="text-base font-semibold uppercase tracking-wide text-white">
             Services
           </h3>
-          <ul className="mt-4 space-y-2.5 text-sm text-ink-300">
+          <ul className="mt-4 space-y-2.5 text-base text-ink-300">
             {services.slice(0, 7).map((service) => (
               <li key={service.slug}>
                 <Link href={`/services/${service.slug}`} className="hover:text-white">
@@ -52,10 +52,10 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
+          <h3 className="text-base font-semibold uppercase tracking-wide text-white">
             Company
           </h3>
-          <ul className="mt-4 space-y-2.5 text-sm text-ink-300">
+          <ul className="mt-4 space-y-2.5 text-base text-ink-300">
             <li>
               <Link href="/about" className="hover:text-white">
                 About Us
@@ -85,10 +85,10 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
+          <h3 className="text-base font-semibold uppercase tracking-wide text-white">
             Contact
           </h3>
-          <ul className="mt-4 space-y-3 text-sm text-ink-300">
+          <ul className="mt-4 space-y-3 text-base text-ink-300">
             <li className="flex items-start gap-2.5">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent-400" />
               <a href={siteConfig.phoneHref} className="hover:text-white">
@@ -101,14 +101,14 @@ export function Footer() {
                 Proudly serving {siteConfig.serviceAreas[0]} and surrounding areas
               </span>
             </li>
-            <li className="pt-2 text-sm text-ink-300">{siteConfig.hours.emergency}</li>
-            <li className="text-sm text-ink-300">{siteConfig.license.label}</li>
+            <li className="pt-2 text-base text-ink-300">{siteConfig.hours.emergency}</li>
+            <li className="text-base text-ink-300">{siteConfig.license.label}</li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-sm text-ink-300 sm:flex-row">
+        <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-base text-ink-300 sm:flex-row">
           <p>
             © {year} {siteConfig.name}. All rights reserved. Veteran-Owned & Operated.
           </p>

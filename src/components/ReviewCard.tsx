@@ -10,13 +10,13 @@ export function ReviewCard({ review }: { review: Review }) {
             <Star key={i} className="h-4 w-4" />
           ))}
         </div>
-        <blockquote className="mt-4 text-sm leading-relaxed text-ink-700">
+        <blockquote className="mt-4 text-base leading-relaxed text-ink-700">
           &ldquo;{review.quote}&rdquo;
         </blockquote>
       </div>
       <figcaption className="mt-6 border-t border-ink-100 pt-4">
-        <p className="text-sm font-bold text-brand-950">{review.name}</p>
-        <p className="text-sm text-ink-500">
+        <p className="text-base font-bold text-brand-950">{review.name}</p>
+        <p className="text-base text-ink-500">
           {review.location} · {review.serviceType}
         </p>
       </figcaption>

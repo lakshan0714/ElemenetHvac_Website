@@ -17,8 +17,8 @@ export function ServiceCard({ service }: { service: Service }) {
       </div>
       <div className="pt-4">
         <h3 className="text-lg font-bold text-brand-950">{service.name}</h3>
-        <p className="mt-1.5 text-sm leading-relaxed text-ink-500">{service.summary}</p>
-        <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-accent-700 transition-all group-hover:gap-2">
+        <p className="mt-1.5 text-base leading-relaxed text-ink-500">{service.summary}</p>
+        <span className="mt-3 inline-flex items-center gap-1 text-base font-semibold text-accent-700 transition-all group-hover:gap-2">
           Learn More <ChevronRight className="h-4 w-4" />
         </span>
       </div>
