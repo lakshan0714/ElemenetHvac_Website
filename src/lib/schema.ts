@@ -1,7 +1,25 @@
 import { siteConfig } from "./site-config";
 
+const FALLBACK_SITE_URL = "https://example.com";
+
 export function getSiteUrl(): string {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+  // `??` only falls back for null/undefined — an env var set to an empty
+  // string (e.g. added in the Vercel dashboard with no value) still passes
+  // that check and previously crashed `new URL('')` in layout.tsx at build
+  // time. Trim and treat blank as unset too, and strip any trailing slash
+  // so callers can safely do `${getSiteUrl()}/path`.
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (!raw) return FALLBACK_SITE_URL;
+
+  try {
+    // Validates it's a real absolute URL before handing it out — an
+    // unparsable value falls back rather than crashing every page.
+    new URL(raw);
+  } catch {
+    return FALLBACK_SITE_URL;
+  }
+
+  return raw.replace(/\/+$/, "");
 }
 
 /** True for values that are still bracketed placeholders, e.g. "[ZIP CODE]". */
