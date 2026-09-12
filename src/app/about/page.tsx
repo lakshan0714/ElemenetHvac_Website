@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/ui/PhoneLink";
 import { Button } from "@/components/ui/Button";
 import { Shield, Award, Wrench, CheckCircle } from "@/components/ui/icons";
+import { JsonLd } from "@/components/JsonLd";
+import { buildBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -40,6 +42,12 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={buildBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
+      />
       <Breadcrumbs
         items={[
           { name: "Home", path: "/" },

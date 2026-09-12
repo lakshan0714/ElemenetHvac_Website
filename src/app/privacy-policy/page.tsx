@@ -1,15 +1,24 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { JsonLd } from "@/components/JsonLd";
+import { buildBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
+  description: `How ${siteConfig.name} collects, uses, and protects information submitted through this website.`,
   alternates: { canonical: "/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {
   return (
     <>
+      <JsonLd
+        data={buildBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Privacy Policy", path: "/privacy-policy" },
+        ])}
+      />
       <Breadcrumbs
         items={[
           { name: "Home", path: "/" },

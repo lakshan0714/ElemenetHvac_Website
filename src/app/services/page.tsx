@@ -5,6 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ServiceCard } from "@/components/ServiceCard";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { FinalCTA } from "@/components/FinalCTA";
+import { JsonLd } from "@/components/JsonLd";
+import { buildBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "HVAC Services",
@@ -15,6 +17,12 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd
+        data={buildBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ])}
+      />
       <Breadcrumbs
         items={[
           { name: "Home", path: "/" },

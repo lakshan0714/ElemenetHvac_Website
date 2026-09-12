@@ -3,6 +3,8 @@ import { siteConfig } from "@/lib/site-config";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ServiceAreaGrid } from "@/components/ServiceAreaGrid";
 import { FinalCTA } from "@/components/FinalCTA";
+import { JsonLd } from "@/components/JsonLd";
+import { buildBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Service Areas",
@@ -13,6 +15,12 @@ export const metadata: Metadata = {
 export default function ServiceAreasPage() {
   return (
     <>
+      <JsonLd
+        data={buildBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Service Areas", path: "/service-areas" },
+        ])}
+      />
       <Breadcrumbs
         items={[
           { name: "Home", path: "/" },

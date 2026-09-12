@@ -4,8 +4,22 @@ export function getSiteUrl(): string {
   return process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
 }
 
+/** True for values that are still bracketed placeholders, e.g. "[ZIP CODE]". */
+function isPlaceholder(value: string | undefined | null): boolean {
+  return !value || value.trim().startsWith("[");
+}
+
 export function buildOrganizationSchema() {
   const url = getSiteUrl();
+  const { address } = siteConfig;
+
+  const streetAddress = isPlaceholder(address.line1) ? undefined : address.line1;
+  const postalCode = isPlaceholder(address.zip) ? undefined : address.zip;
+  // Only emit a PostalAddress once every field we'd populate is real —
+  // a partial address (e.g. city/state but no real street or ZIP) isn't
+  // a fact worth asserting in structured data.
+  const hasCompleteAddress = Boolean(streetAddress && postalCode);
+
   return {
     "@context": "https://schema.org",
     "@type": "HVACBusiness",
@@ -14,17 +28,21 @@ export function buildOrganizationSchema() {
     description: siteConfig.description,
     url,
     telephone: siteConfig.phone,
-    email: siteConfig.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: siteConfig.address.line1,
-      addressLocality: siteConfig.address.city,
-      addressRegion: siteConfig.address.state,
-      postalCode: siteConfig.address.zip,
-      addressCountry: "US",
-    },
+    ...(isPlaceholder(siteConfig.email) ? {} : { email: siteConfig.email }),
+    ...(hasCompleteAddress
+      ? {
+          address: {
+            "@type": "PostalAddress",
+            streetAddress,
+            addressLocality: address.city,
+            addressRegion: address.state,
+            postalCode,
+            addressCountry: "US",
+          },
+        }
+      : {}),
     areaServed: siteConfig.serviceAreas,
-    priceRange: "$$",
+    // No priceRange — never confirmed by the business, don't invent one.
   };
 }
 
